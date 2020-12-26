@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() {
+    public function index() 
+    {
         $items = [
             'ipad',
             'iphone'
@@ -17,11 +18,13 @@ class HomeController extends Controller
         ]);
     }
 
-    public function hello() {
+    public function hello() 
+    {
         return view('hello');
     }
 
-    public function contact() {
+    public function contact() 
+    {
         return view('contact');
     }
 }
