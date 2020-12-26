@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('title')
-    Welcome
+    Hello
 @endsection
 
 @section('content')
-    Welcome
+    Hello
 @endsection
