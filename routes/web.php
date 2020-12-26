@@ -11,21 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    $items = [
-        'ipad',
-        'iphone'
-    ];
+Route::get('/', 'HomeController@index');
 
-    return view('welcome', [
-        'items' => $items
-    ]);
-});
+Route::get('/hello', 'HomeController@hello');
 
-Route::get('/hello', function () {
-    return view('hello');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', 'HomeController@contact');
