@@ -12,7 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $items = [
+        'ipad',
+        'iphone'
+    ];
+
+    return view('welcome', [
+        'items' => $items
+    ]);
 });
 
 Route::get('/hello', function () {
