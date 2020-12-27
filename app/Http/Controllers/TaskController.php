@@ -40,4 +40,22 @@ class TaskController extends Controller
             'task' => $task
         ]);
     }
+
+    public function edit(Task $task)
+    {
+        return view('tasks.edit', [
+            'task' => $task
+        ]);
+    }
+
+    public function update(Task $task)
+    {
+        request('title');
+        $task->update([
+            'title' => request('title'),
+            'body' => request('body'),
+        ]);
+
+        return redirect('/tasks/'.$task->id);
+    }
 }
