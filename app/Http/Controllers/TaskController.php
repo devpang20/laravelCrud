@@ -26,11 +26,18 @@ class TaskController extends Controller
         $request->input('title');
         $request->input('body');
 
-        Task::create([
+        $task = Task::create([
             'title' => $request->input('title'),
             'body' => $request->input('body'),
         ]);
 
-        return redirect('/tasks');
+        return redirect('/tasks/'.$task->id);
+    }
+
+    public function show(Task $task)
+    {
+        return view('tasks.show', [
+            'task' => $task
+        ]);
     }
 }
