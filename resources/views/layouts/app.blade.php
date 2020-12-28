@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('css/tailwind.css')}}">
 </head>
 <body>
     <div id="app">
@@ -33,7 +34,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a href="/tasks">Tasks</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
