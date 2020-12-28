@@ -19,11 +19,7 @@ Route::get('/contact', 'HomeController@contact');
 
 Route::get('/projects', 'ProjectController@index');
 
-Route::prefix('tasks')->middleware('auth')->group( function () {
-
-    Route::resource('tasks', 'TaskController')->middleware('auth');
-
-});
+Route::resource('tasks', 'TaskController')->middleware('auth');
 
 Auth::routes();
 
