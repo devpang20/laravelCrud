@@ -19,16 +19,24 @@ Route::get('/contact', 'HomeController@contact');
 
 Route::get('/projects', 'ProjectController@index');
 
-Route::get('/tasks', 'TaskController@index');
+Route::prefix('tasks')->middleware('auth')->group( function () {
 
-Route::get('/tasks/create', 'TaskController@create');
+    Route::get('/', 'TaskController@index');
 
-Route::post('/tasks', 'TaskController@store');
+    Route::get('/create', 'TaskController@create');
 
-Route::get('/tasks/{task}', 'TaskController@show');
+    Route::post('/', 'TaskController@store');
 
-Route::get('/tasks/{task}/edit', 'TaskController@edit');
+    Route::get('/{task}', 'TaskController@show');
 
-Route::put('/tasks/{task}', 'TaskController@update');
+    Route::get('/{task}/edit', 'TaskController@edit');
 
-Route::delete('/tasks/{task}', 'TaskController@destory');
+    Route::put('/{task}', 'TaskController@update');
+
+    Route::delete('/{task}', 'TaskController@destory');
+
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

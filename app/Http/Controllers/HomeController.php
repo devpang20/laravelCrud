@@ -6,25 +6,23 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $items = [
-            'ipad',
-            'iphone'
-        ];
-    
-        return view('welcome', [
-            'items' => $items
-        ]);
+        $this->middleware('auth');
     }
 
-    public function hello() 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-        return view('hello');
-    }
-
-    public function contact() 
-    {
-        return view('contact');
+        return view('home');
     }
 }
